@@ -1,4 +1,4 @@
-package com.example.forum_hub.model;
+package com.example.forum_hub.model.dto;
 
 import jakarta.validation.constraints.NotBlank;
 

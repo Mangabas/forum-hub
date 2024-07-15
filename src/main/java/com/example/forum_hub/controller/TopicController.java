@@ -1,8 +1,8 @@
 package com.example.forum_hub.controller;
 
-import com.example.forum_hub.model.Topics;
-import com.example.forum_hub.model.TopicsDTO;
-import com.example.forum_hub.model.TopicsReturnDTO;
+import com.example.forum_hub.model.classes.Topics;
+import com.example.forum_hub.model.dto.TopicsDTO;
+import com.example.forum_hub.model.dto.TopicsReturnDTO;
 import com.example.forum_hub.repository.TopicRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

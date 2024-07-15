@@ -1,10 +1,9 @@
-package com.example.forum_hub.model;
+package com.example.forum_hub.model.classes;
 
+import com.example.forum_hub.model.dto.TopicsDTO;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
 
 @Entity
 @Table(name = "Topics")
@@ -22,8 +21,6 @@ public class Topics {
 //    @JoinColumn(name = "author_id")
 //    private Profiles author;
     private String group_name;
-    @OneToMany(mappedBy = "topic", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Answers> answers;
 
     public Topics(TopicsDTO topic) {
         this.title = topic.title();

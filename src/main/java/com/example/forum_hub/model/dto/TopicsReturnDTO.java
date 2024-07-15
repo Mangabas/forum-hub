@@ -1,4 +1,6 @@
-package com.example.forum_hub.model;
+package com.example.forum_hub.model.dto;
+
+import com.example.forum_hub.model.classes.Topics;
 
 import java.time.LocalDateTime;
 
