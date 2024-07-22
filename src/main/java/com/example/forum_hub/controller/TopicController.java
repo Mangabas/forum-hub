@@ -57,9 +57,11 @@ public class TopicController {
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity putTopic(@PathVariable Long id,@RequestBody @Valid TopicsDTO post ){
+    public ResponseEntity putTopic(@PathVariable Long id,@RequestBody @Valid TopicsDTO post, Authentication authentication){
+        String loggedUser = authentication.getName();
+        Long userId = topicService.compareUser(loggedUser);
         Optional<Topics> topic = repository.findById(id);
-        if (topic.isEmpty()){
+        if (topic.isEmpty() || userId != topic.get().getAuthor().getId()){
             return ResponseEntity.notFound().build();
         }
         topic.get().attTopic(post);

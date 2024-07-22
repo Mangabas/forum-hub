@@ -6,6 +6,7 @@ import com.example.forum_hub.model.dto.TopicsDTO;
 import com.example.forum_hub.repository.ProfileRepository;
 import com.example.forum_hub.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,11 @@ public class TopicService {
         topicRepository.save(topic);
 
         return topic;
+    }
+
+    public Long compareUser(String loggedUser){
+        Profiles profiles = (Profiles) profileRepository.findByLogin(loggedUser);
+        return profiles.getId();
     }
 
 
