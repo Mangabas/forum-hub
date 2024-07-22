@@ -71,9 +71,11 @@ public class TopicController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity deleteTopic(@PathVariable Long id) {
+    public ResponseEntity deleteTopic(@PathVariable Long id, Authentication authentication) {
+        String loggedUser = authentication.getName();
+        Long userId = topicService.compareUser(loggedUser);
         Optional<Topics> topic = repository.findById(id);
-        if (topic.isEmpty()){
+        if (topic.isEmpty() || userId != topic.get().getAuthor().getId()){
             return ResponseEntity.notFound().build();
         }
         topic.get().inativeTopic();
@@ -82,9 +84,11 @@ public class TopicController {
     }
     @PutMapping("/active/{id}")
     @Transactional
-    public ResponseEntity activeTopic(@PathVariable Long id){
+    public ResponseEntity activeTopic(@PathVariable Long id, Authentication authentication){
+        String loggedUser = authentication.getName();
+        Long userId = topicService.compareUser(loggedUser);
         Optional<Topics> topic = repository.findById(id);
-        if (topic.isEmpty()){
+        if (topic.isEmpty()|| userId != topic.get().getAuthor().getId() ){
             return ResponseEntity.notFound().build();
         }
         topic.get().activeTopic();
