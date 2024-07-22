@@ -17,14 +17,27 @@ API Rest que seja responsável por manejar posts de um fórum, utilizando recurs
   }  
   Detalhe: A senha cadastrada pelo usuário será criptografada utilizando a tecnologia BCrypt.
 
-- Novo tópico: Dentro da url `/topics` com o método POST, será necessário enviar um Json contendo três Strings: title, message e group. Caso apareça
-  o código de status 201 (Created), será retornado outro Json contendo: id, title, message, group, date, status e authorId.
+- Novo tópico: Dentro da url `/topics` com o método POST, será necessário enviar um Json contendo três Strings: title, message e group. Caso apareça o código de status 201 (Created), será retornado outro Json contendo: id, title, message, group, date, status e authorId.
 
 - Listar tópicos: Dentro da url `/topics` dessa vez com o método GET, será retornado um page com o tamanho de 10 tópicos.
 
 - Tópico específico: Dentro da url `/topics/{id}` também com GET, você poderá escolhar o id de algum tópico específico para pesquisar.
 
-- Editar tópico
+- Editar tópico: Dentro da url `/topics/{id}` com o método PUT, será necessário enviar um Json contendo três Strings: title, message e group. Caso apareça o código de status 200 o post será editado e vai ser retornado outro Json contendo: id, title, message, group, date, status e authorId.  
+Detalhe: O usurário tem que ter criado o código para edita-lo.
+
+- Excluir tópico: Dentro da url `/topics/{id}` com o método DELETE, o usuário deixará o código com o status: false.
+Detalhe: O usurário tem que ter criado o código para desativa-lo.
+
+- Ativar tópico: Dentro da url `/topics/active/{id}` com o método PUT, o usuário deixará o código com o status: true.
+Detalhe: O usurário tem que ter criado o código para ativa-lo.
+
+## Pré-requisitos
+
+- Java 17 ou superior instalado.
+- Maven instalado para construção do projeto.
+- Variáveis de ambiente `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` e `JWT_SECRET`.
+
 
 ## Tecnologias
 - **Spring Boot**
