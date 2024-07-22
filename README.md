@@ -27,6 +27,16 @@ API Rest que seja responsável por manejar posts de um fórum, utilizando recurs
 Detalhe: O usurário tem que ter criado o código para edita-lo.
 
 - Excluir tópico: Dentro da url `/topics/{id}` com o método DELETE, o usuário deixará o código com o status: false.
+Detalhe: O usurário tem que ter criado o código para desativa-lo.
+
+- Ativar tópico: Dentro da url `/topics/active/{id}` com o método PUT, o usuário deixará o código com o status: true.
+Detalhe: O usurário tem que ter criado o código para ativa-lo.
+
+## Pré-requisitos
+
+- Java 17 ou superior instalado.
+- Maven instalado para construção do projeto.
+- Variáveis de ambiente `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` e `JWT_SECRET`.
 
 
 ## Tecnologias
