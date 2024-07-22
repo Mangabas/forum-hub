@@ -16,8 +16,13 @@ public class Profiles implements UserDetails {
     private Long id;
     private String login;
     private String password;
-    //    @OneToOne(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    private Topics post;
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Topics> post;
+
+    public void setPost(List<Topics> post) {
+        post.forEach(t -> t.setAuthor(this));
+        this.post = post;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -58,5 +63,5 @@ public class Profiles implements UserDetails {
         return id;
     }
 
-
+    public Profiles() {}
 }

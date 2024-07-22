@@ -1,7 +1,13 @@
 package com.example.forum_hub.model.classes;
 
 import com.example.forum_hub.model.dto.TopicsDTO;
+import com.example.forum_hub.repository.ProfileRepository;
+import com.example.forum_hub.service.TokenService;
 import jakarta.persistence.*;
+import jakarta.servlet.http.HttpServletRequest;
+import org.apache.catalina.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDateTime;
 
@@ -17,10 +23,18 @@ public class Topics {
     private String message;
     private LocalDateTime dateTime ;
     private Boolean status;
-//    @OneToOne
-//    @JoinColumn(name = "author_id")
-//    private Profiles author;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Profiles author;
     private String group_name;
+
+    public Profiles getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Profiles author) {
+        this.author = author;
+    }
 
     public Topics(TopicsDTO topic) {
         this.title = topic.title();

@@ -7,7 +7,6 @@ public record TopicsDTO(
         String title,
         @NotBlank
         String message,
-        @NotBlank
         String group
 ) {
 }

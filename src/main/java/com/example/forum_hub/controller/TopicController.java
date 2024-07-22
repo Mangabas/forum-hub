@@ -4,12 +4,16 @@ import com.example.forum_hub.model.classes.Topics;
 import com.example.forum_hub.model.dto.TopicsDTO;
 import com.example.forum_hub.model.dto.TopicsReturnDTO;
 import com.example.forum_hub.repository.TopicRepository;
+import com.example.forum_hub.services.TopicService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -19,16 +23,20 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("topics")
+@SecurityRequirement(name = "bearer-key")
 public class TopicController {
+
+    @Autowired
+    private TopicService topicService;
 
     @Autowired
     private TopicRepository repository;
 
     @PostMapping
     @Transactional
-    public ResponseEntity newTopic(@RequestBody @Valid TopicsDTO post, UriComponentsBuilder uriBuilder){
-        Topics topic = new Topics(post);
-        repository.save(topic);
+    public ResponseEntity newTopic(@RequestBody @Valid TopicsDTO post, UriComponentsBuilder uriBuilder, Authentication authentication){
+        String loggedUser = authentication.getName();
+        Topics topic = topicService.saveTopic(post,loggedUser);
 
         URI uri = uriBuilder.path("/topics/{id}").buildAndExpand(topic.getId()).toUri();
         return ResponseEntity.created(uri).body(new TopicsReturnDTO(topic));

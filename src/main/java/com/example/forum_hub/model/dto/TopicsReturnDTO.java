@@ -4,9 +4,9 @@ import com.example.forum_hub.model.classes.Topics;
 
 import java.time.LocalDateTime;
 
-public record TopicsReturnDTO(Long id, String title, String message, String group, LocalDateTime date, Boolean status) {
+public record TopicsReturnDTO(Long id, String title, String message, String group, LocalDateTime date, Boolean status, Long authorId) {
     public TopicsReturnDTO(Topics topic) {
-        this(topic.getId(), topic.getTitle(), topic.getMessage(), topic.getGroup_name(), topic.getDateTime(), topic.getStatus());
+        this(topic.getId(), topic.getTitle(), topic.getMessage(), topic.getGroup_name(), topic.getDateTime(), topic.getStatus(), topic.getAuthor().getId());
     }
 
 }
