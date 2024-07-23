@@ -2,20 +2,15 @@
 ![Static Badge](https://img.shields.io/badge/Spring-Green)
 ![Static Badge](https://img.shields.io/github/license/Mangabas/forum-hub.svg)
 
+# Índice 
+
+* [Sobre](#Sobre)
+
+  
 
 ## Sobre
 Esse projeto é um desafio da Alura juntamente da Oracle Next Education, seu objetivo é desenvolver o back end de uma aplicação web com
 API Rest que seja responsável por manejar posts de um fórum, utilizando recursos de CRUD e autenticação Stateless.
-
-## Tecnologias
-- **Spring Boot**
-- **Spring Data JPA**
-- **Spring Security**
-- **Spring Validation**
-- **Flyway**
-- **PostgreSQL**
-- **Swagger**
-- **Java JWT (Auth0)**
 
 ## Funcionalidades
 - Login: Para receber o bearer token, que será necessário enviar nas outras requisições, o usuario tem que fazer a autenticação por meio da url `/login` utilizando a requisição POST
@@ -49,8 +44,18 @@ Detalhe: O usurário tem que ter criado o post para ativa-lo.
 - Variáveis de ambiente `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` e `JWT_SECRET`.
 - Configure um banco de dados `PostgreSQL` com o nome e credenciais especificadas em application.properties.
 
-### Acessando a Documentação da API
+## Acessando a Documentação da API
 - Após iniciar o projeto, acesse http://localhost:8080/swagger-ui.html para visualizar a documentação interativa da API gerada pelo Swagger.
+
+## Tecnologias
+- **Spring Boot**
+- **Spring Data JPA**
+- **Spring Security**
+- **Spring Validation**
+- **Flyway**
+- **PostgreSQL**
+- **Swagger**
+- **Java JWT (Auth0)**
 
 ## Badge
 Este é um badge conquistado por ter desenvolvido este projeto com a Alura no programa ONE - "Oracle Next Education" em parceria com a Oracle:  
