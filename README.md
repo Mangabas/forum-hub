@@ -5,9 +5,14 @@
 # Índice 
 
 * [Sobre](#Sobre)
-
+* [Funcionalidades](#Funcionalidades)
+* [Pré-requisitos](#Pré-requisitos)
+* [Acessando a Documentação da API](Acessando-a-Documentação-da-API)
+* [Tecnologias](#Tecnologias)
+* [Badge](#Badge)
   
-
+    
+  
 ## Sobre
 Esse projeto é um desafio da Alura juntamente da Oracle Next Education, seu objetivo é desenvolver o back end de uma aplicação web com
 API Rest que seja responsável por manejar posts de um fórum, utilizando recursos de CRUD e autenticação Stateless.
