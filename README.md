@@ -62,7 +62,7 @@ Detalhe: O usurário tem que ter criado o post para ativa-lo.
 - **Java JWT (Auth0)**
 
 ## Badge
-Este é um badge conquistado por ter desenvolvido este projeto com a Alura no programa ONE - "Oracle Next Education" em parceria com a Oracle:  
+Este é o badge conquistado por ter desenvolvido este projeto com a Alura no programa ONE - "Oracle Next Education" em parceria com a Oracle:  
 ![Badge-Spring](https://github.com/user-attachments/assets/e91c17d2-e3c8-49f3-94d7-d130fbef63e2)
 
 
