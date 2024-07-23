@@ -2,7 +2,6 @@
 ![Static Badge](https://img.shields.io/badge/Spring-Green)
 ![Static Badge](https://img.shields.io/github/license/Mangabas/forum-hub.svg)
 
-# Índice 
 
 * [Sobre](#Sobre)
 * [Funcionalidades](#Funcionalidades)
