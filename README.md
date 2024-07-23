@@ -34,13 +34,13 @@ API Rest que seja responsável por manejar posts de um fórum, utilizando recurs
 - Tópico específico: Dentro da url `/topics/{id}` também com GET, você poderá escolhar o id de algum tópico específico para pesquisar.
 
 - Editar tópico: Dentro da url `/topics/{id}` com o método PUT, será necessário enviar um Json contendo três Strings: title, message e group. Caso apareça o código de status 200 o post será editado e vai ser retornado outro Json contendo: id, title, message, group, date, status e authorId.  
-Detalhe: O usurário tem que ter criado o código para edita-lo.
+Detalhe: O usurário tem que ter criado o post para edita-lo.
 
 - Excluir tópico: Dentro da url `/topics/{id}` com o método DELETE, o usuário deixará o código com o status: false.  
-Detalhe: O usurário tem que ter criado o código para desativa-lo.
+Detalhe: O usurário tem que ter criado o post para desativa-lo.
 
 - Ativar tópico: Dentro da url `/topics/active/{id}` com o método PUT, o usuário deixará o código com o status: true.  
-Detalhe: O usurário tem que ter criado o código para ativa-lo.
+Detalhe: O usurário tem que ter criado o post para ativa-lo.
 
 ## Pré-requisitos
 
