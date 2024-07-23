@@ -22,7 +22,7 @@ API Rest que seja responsável por manejar posts de um fórum, utilizando recurs
   de dados é:  
   {  
   "login":"test.login@forumhub.com",  
-  "password": "123"
+  "password": "123"  
   }  
   Detalhe: A senha cadastrada pelo usuário será criptografada utilizando a tecnologia BCrypt.
 
